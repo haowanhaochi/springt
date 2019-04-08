@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neu.springt.mapper.DeptMapper">
+	<delete id="deleteDept" parameterType="int">
+		delete from dept where dno=#{dno};
+	</delete>
+	<insert id="insertDept" parameterType="com.neu.springt.pojo.Dept">
+		insert into dept (dno, dname, dloc)
+		values(#{dno}, #{dname}, #{dloc})
+	</insert>
+	<select id="queryDept" parameterType="Integer" resultType="com.neu.springt.pojo.Dept">
+		select * from dept where dno=#{dno}
+	</select>
+</mapper>
+
